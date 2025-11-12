@@ -1,6 +1,6 @@
-import { ISlotConfig } from '../interfaces/ISlotConfig';
-import { IPayoutCalculator } from '../interfaces/IPayoutCalculator';
-import { MIN_MATCH_COUNT } from '../constants';
+import { ISlotConfig } from "../interfaces/ISlotConfig";
+import { IPayoutCalculator } from "../interfaces/IPayoutCalculator";
+import { MIN_MATCH_COUNT } from "../constants";
 
 export class PayoutCalculator implements IPayoutCalculator {
   constructor(private readonly config: ISlotConfig) {}
@@ -15,8 +15,7 @@ export class PayoutCalculator implements IPayoutCalculator {
       return 0;
     }
 
-    const payoutIndex = Math.min(count - 1, symbolPayouts.length - 1);
+    const payoutIndex = count - 1;
     return symbolPayouts[payoutIndex] ?? 0;
   }
 }
-
